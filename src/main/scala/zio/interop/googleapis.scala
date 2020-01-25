@@ -59,7 +59,7 @@ object googleapis {
 
   }
 
-  implicit class ZioObjListenableFutureOps(private val zioObj: ZIO.type) extends AnyVal {
+  implicit class ZioObjApiFutureOps(private val zioObj: ZIO.type) extends AnyVal {
 
     def fromApiFuture[A](make: ExecutionContext => ApiFuture[A]): Task[A] =
       googleapis.fromApiFuture(make)
